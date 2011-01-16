@@ -1,0 +1,39 @@
+  <%= stylesheet_link_tag 'custom2', :media => 'screen'%>
+  
+  
+  
+<div id="wrapper" class ="micropost_profile" summary = "micropost information">
+  <p id="titleHolder">
+    <h1>
+      <%=@micropost.title%>
+    </h1>
+    
+  </p>
+  <p id="locationName">
+    <%=@micropost.location.name%> 
+  </p>
+  <p id="description">
+    <%=@micropost.content%> <br/>
+  </p>
+  <p id="tags">
+    
+  </p>
+  <p id="compensation">
+    $<%=@micropost.compensation%> per hour
+  </p>
+  <div id="information">
+    <div id="views">
+      233<br/>
+      views
+    </div>
+    <div id="reponses">
+      2<br/>
+      reponses
+    </div>
+  </div>
+  <div id="reponse" class = "field">
+    Respond<br/>
+    <input type="text"/>
+  </div>
+</div>
+

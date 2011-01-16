@@ -1,0 +1,17 @@
+<h1>All locations</h1>
+
+
+<% if signed_in?%>
+<% if current_user.admin?%>
+  <%= link_to "Create new location", newlocation_path%>
+<%end%>
+<%end%>
+
+
+<%=will_paginate @locations%>
+<ul class ="locations">
+  
+  <%= render @locations%>
+</ul>
+
+<%=will_paginate @locations%>

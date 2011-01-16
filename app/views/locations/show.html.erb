@@ -1,0 +1,21 @@
+<table class ="location_profile" summary = "location information">
+  <tr>
+     <td class = "main">
+      <h1>
+        <%=@location.name%>
+      </h1>     
+      
+       <%unless @location.microposts.empty?%>
+      <table class = "microposts" summary="location microposts">
+        <%= render @microposts%>
+      </table>
+      <%= will_paginate @microposts%>
+      <%end%>     
+      
+    </td>
+
+  
+  
+  
+  </tr>
+</table>

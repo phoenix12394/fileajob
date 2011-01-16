@@ -1,0 +1,29 @@
+<h1>New post</h1>
+<%= form_for (@micropost) do |f|%>
+<%=render 'shared/error_messages', :object => f.object%>
+  <div class = "field">
+    <%= f.label :title%><br/>
+    <%= f.text_field :title%>
+  </div>
+  <div class = "field">
+    <%= f.label :location_id%><br/>
+    <%= f.select :location_id, Location.find(:all, :order => "name").collect{|s| [s.name, s.id]}%>
+  </div>
+  <div class = "field">
+    <%= f.label :category_id%><br/>
+    <%= f.select :category_id, Category.find(:all, :order => "name").collect{|s| [s.name, s.id]}%>
+  </div>
+
+
+  <div class = "field">
+    <%= f.label :content%><br/>
+    <%= f.text_area :content%>
+  </div>
+  <div class = "field">
+    <%= f.label :compensation%><br/>
+    <%= f.text_field :compensation%>
+  </div>
+  <div class ="actions">
+    <%=f.submit "Post"%>
+  </div>
+  <%end%>

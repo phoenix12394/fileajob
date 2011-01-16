@@ -1,0 +1,21 @@
+<table class ="category_profile" summary = "category information">
+  <tr>
+     <td class = "main">
+      <h1>
+        <%=@category.name%>
+      </h1>     
+      
+       <%unless @category.microposts.empty?%>
+      <table class = "microposts" summary="category microposts">
+        <%= render @microposts%>
+      </table>
+      <%= will_paginate @microposts%>
+      <%end%>     
+      
+    </td>
+
+  
+  
+  
+  </tr>
+</table>

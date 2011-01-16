@@ -1,0 +1,16 @@
+<h1>All categories</h1>
+
+
+<% if signed_in?%>
+<% if current_user.admin?%>
+  <%= link_to "Create new category", newcategory_path%>
+<%end%>
+<%end%>
+
+
+<%=will_paginate @categories%>
+<ul class ="categories">
+  
+  <%= render @categories%>
+</ul>
+<%=will_paginate @categories%>
